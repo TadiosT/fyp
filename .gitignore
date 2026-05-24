@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.idea/
+.c*/
+.vscode/
+.DS_Store
+
+# Large local assets — checked in by the developer, not committed
+data/*.mp4
+models/
+
+# Calibration artifacts (generated locally, machine-specific)
+data/homography_lecture.npz
+
+# Streamlit local caches
+.streamlit/secrets.toml
