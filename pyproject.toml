@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "campus-occupancy"
+version = "0.1.0"
+description = "Live campus occupancy dashboard: Huxley labs, Lecture Hall 144 (YOLO), White City labs, Netatmo air quality"
+requires-python = ">=3.9"
+dependencies = [
+    "streamlit>=1.50",
+    "pandas",
+    "numpy",
+    "plotly",
+    "pillow",
+    "requests",
+    "sqlmodel",
+    "scipy",
+    "opencv-python",
+    "ultralytics",
+    "streamlit-image-coordinates",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+norecursedirs = ["venv", "experimental_notebooks", "data", "assets", "models"]
+python_files = ["test_*.py"]
+addopts = "-q --cov --cov-report=term-missing:skip-covered"
+markers = [
+    "integration: renders Streamlit scripts through AppTest (slower, hermetic synthetic data)",
+    "yolo: needs models/yolov8s.pt and data/lecture_video.mp4; auto-skips when missing",
+    "slow: long-running tests",
+]
+filterwarnings = [
+    "ignore:urllib3 v2 only supports OpenSSL:Warning",
+    "ignore:I don't know how to infer vegalite type:UserWarning",
+    "ignore:.*use_container_width.*:DeprecationWarning",
+]
+
+[tool.coverage.run]
+source = ["campus_occupancy"]
+omit = ["*/tools/calibrate_*.py", "*/tools/label_*.py", "*/pages/*"]
+
+[tool.coverage.report]
+show_missing = true
+precision = 1

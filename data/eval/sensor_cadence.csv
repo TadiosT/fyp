@@ -1,0 +1,5 @@
+location,kind,rows_total,rows_live,live_span_h,median_gap_min,gaps_over_1p5x,max_gap_min,uptime_pct,missing_rows
+WC-S01,virtual,2223,4,0.25,5.0,0,5.0,100,0.0
+WC-S02,virtual,2223,4,0.25,5.0,0,5.0,100,0.0
+WC-S03,virtual,2223,4,0.25,5.0,0,5.0,100,0.0
+WC-S04,virtual,2223,4,0.25,5.0,0,5.0,100,0.0

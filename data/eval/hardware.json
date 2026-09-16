@@ -1,0 +1,10 @@
+{
+ "machine": "Darwin 25.1.0 (arm64)",
+ "cpu": "Apple M1",
+ "python": "3.9.6",
+ "torch": "2.8.0",
+ "ultralytics": "8.4.51",
+ "opencv": "4.13.0",
+ "numpy": "2.0.2",
+ "streamlit": "1.50.0"
+}

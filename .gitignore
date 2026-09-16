@@ -1,6 +1,5 @@
 __pycache__/
 *.pyc
-.venv/
 venv/
 .idea/
 .c*/
@@ -10,9 +9,45 @@ venv/
 # Large local assets — checked in by the developer, not committed
 data/*.mp4
 models/
-
+*.pt
 # Calibration artifacts (generated locally, machine-specific)
 data/homography_lecture.npz
+
+# Lab mock data — regenerate with tools/generate_lab_seed.py --lab {wc,huxley}
+data/wc_mock_access_logs.csv
+data/wc_occupancy_hourly.csv
+data/huxley_mock_access_logs_with_users.csv
+data/huxley_occupancy_hourly.csv
+
+# Local sensor cache (populated by sensor_worker.py)
+data/sensor_readings.db
+data/sensor_readings.db-journal
+data/sensor_readings.db-wal
+data/sensor_readings.db-shm
+
+# Notebook artefacts derived from the lecture recording (never committed: identifiable people / declared deleted)
+experimental_notebooks/**/audio_files_144/
+experimental_notebooks/**/snapshots/
+experimental_notebooks/**/snapshots_cropped/
+
+# Coverage tool output (regenerate with: venv/bin/python -m pytest --cov)
+data/eval/coverage*.json
+
+# Notebook artefacts derived from the lecture recording (identifiable people)
+experimental_notebooks/Lecture_Hall_Occupancy/final_occupancy_heatmap.png
+
+# Superseded mock-log intermediates kept locally for provenance only
+experimental_notebooks/Computing_Lab_Usage/huxley_mock_access_logs_updated.csv
+experimental_notebooks/Computing_Lab_Usage/huxley_mock_access_logs_pinpoint.csv
+
+# Packaging artefacts (editable install)
+*.egg-info/
+
+# Test / coverage artefacts
+.coverage
+.coverage.*
+.pytest_cache/
+htmlcov/
 
 # Streamlit local caches
 .streamlit/secrets.toml

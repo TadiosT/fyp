@@ -1,0 +1,7 @@
+air,attendance,threshold,teaching,quiet,zones_used,first_overflow_min,early_co2_overflows,quiet_opened,max_fill,peak_seated,unseated
+baseline air,60,0.75,2b,1a,1,,0,False,0.3614,60,0
+baseline air,100,0.75,2b,1a,1,,0,False,0.6024,100,0
+baseline air,250,0.75,2b,1a,3,4.0,0,False,0.7533,250,0
+baseline air,600,0.75,2b,1a,4,1.0,0,True,1.0,578,22
+baseline air,250,0.9,2b,1a,2,4.0,1,False,0.8675,250,0
+all rooms at 1300 ppm,250,0.75,2b,1a,4,0.0,3,True,0.506,250,0
